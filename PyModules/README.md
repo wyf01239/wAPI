@@ -8,7 +8,7 @@
 
 (还没弄)
 
-## wAPIgetChar.py
+## [wAPIgetChar.py](./wAPIgetChar.py)
 
 获取单个字符输入
 
@@ -30,7 +30,7 @@ print(gc)
 
 ```
 
-## wAPIPrimeNum.py
+## [wAPIPrimeNum.py](./wAPIPrimeNum.py)
 
 简单的质数判断器
 

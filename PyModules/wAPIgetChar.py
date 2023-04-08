@@ -19,12 +19,12 @@ else:
             ch = sys.stdin.read(1)
         finally:
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-        return ch
+        return str(ch)
 
 def wMain():
-	wgch = getch()
-	try:
-		wgch2 = str(wgch)
-	except ValueError:
-		wgch2 = "null"
-	return wgch2
+    wgch = getch()
+    try:
+        wgch2 = str(wgch)
+    except ValueError:
+        wgch2 = "null"
+    return wgch2
