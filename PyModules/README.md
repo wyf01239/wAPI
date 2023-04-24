@@ -80,7 +80,7 @@ return 0
     - 调用: wAPICircleCalc.Original
     - 参数: 无
     - 返回: 无
-    - ***Dobastickrn 提供的原版, 不建议使用**
+    - ***Dobastickrn 提供的原版, 自带输入输出且无参数和返回, 不建议使用**
 
 2. 半径求其他
     - 调用: wAPICircleCalc.r(r)
@@ -88,7 +88,7 @@ return 0
         - r: int / float
     - 返回
         - 正常返回: tuple (直径(float), 周长(float), 面积(float))
-        - 错误: tuple (0, 0, 0)
+        - 错误: None
 
 3. 半径求其他 (自定义 PAI)
     - 调用: wAPICircleCalc.r_(r, pai)
@@ -97,7 +97,7 @@ return 0
         - pai: int / float
     - 返回
         - 正常返回: tuple (直径(float), 周长(float), 面积(float))
-        - 错误: tuple (0, 0, 0)
+        - 错误: None
 
 4. 直径求其他
     - 调用: wAPICircleCalc.d(d)
@@ -105,7 +105,7 @@ return 0
         - d: int / float
     - 返回
         - 正常返回: tuple (半径(float), 周长(float), 面积(float))
-        - 错误: tuple (0, 0, 0)
+        - 错误: None
 
 5. 直径求其他 (自定义 PAI)
     - 调用: wAPICircleCalc.d_(r, pai)
@@ -114,7 +114,7 @@ return 0
         - pai: int / float
     - 返回
         - 正常返回: tuple (半径(float), 周长(float), 面积(float))
-        - 错误: tuple (0, 0, 0)
+        - 错误: None
 
 6. 周长求其他
     - 调用： wAPICircleCalc.C(C)
@@ -122,22 +122,41 @@ return 0
         - C: int / float
     - 返回
         - 正常返回: tuple (半径(float), 直径(float), 面积(float))
-        - 错误: tuple (0, 0, 0)
+        - 错误: None
 
 7. 周长求其他 (自定义 PAI)
-    - 调用： wAPICircleCalc.C(C, pai)
+    - 调用： wAPICircleCalc.C_(C, pai)
     - 参数
         - C: int / float
         - pai: int / float
     - 返回
         - 正常返回: tuple (半径(float), 直径(float), 面积(float))
-        - 错误: tuple (0, 0, 0)
+        - 错误: None
+
+8. 面积求其他
+    - 调用： wAPICircleCalc.S(S)
+    - 参数
+        - S: int / float
+    - 返回
+        - 正常返回: tuple (半径(float), 直径(float), 周长(float))
+        - 错误: None
+
+9. 面积求其他 (自定义 PAI)
+    - 调用： wAPICircleCalc.S_(S, pai)
+    - 参数
+        - S: int / float
+        - pai: int / float
+    - 返回
+        - 正常返回: tuple (半径(float), 直径(float), 周长(float))
+        - 错误: None
 
 # [wAPICheckLib.py](./wAPICheckLib.py)
 
 检测用户是否安装了指定的 Python 库, 如未安装则自动安装
 
 测试 Python 版本: **3.11.1**
+
+**WARNING: 未开发完成, 不能省略参数**
 
 ## 调用: 
 
@@ -151,7 +170,7 @@ wAPICheckLib.wMain (name, file, url, urliswhl)
 
 PS: 
 - 从指定 URL 安装仅在 Windows 10 21H1 及以上可用
-- 如果不想指定安装文件或下载地址, 请设置为 None.
+- <del>如果不想指定安装文件或下载地址, 请设置为 None.</del>
 
 返回:
 - -1: 已经安装
@@ -165,6 +184,7 @@ PS:
 本地安装文件: \Libs\pygame.whl
 
 下载 URL: http://localhost/pygame.whl
+
 ps: 此处**假定用户已安装该库**
 ```python
 import wAPICheckLib as wCL

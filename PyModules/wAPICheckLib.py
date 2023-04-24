@@ -63,8 +63,7 @@ def wMain(name, file, url, urliswhl):
         else:
             pass
     if wErr == True:
-        print("[wAPICheckLib] " + name + " 安装失败, 请自行安装库: " + name +
-              "(https://pypi.org/project/" + name + " 或 " + url + ")")
+        print("[wAPICheckLib] " + name + " 安装失败, 请自行安装库: " + name + "(https://pypi.org/project/" + name + " 或 " + url + ")")
         return 1
     else:
         print("[wAPICheckLib] 成功安装库 " + name)
