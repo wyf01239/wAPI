@@ -8,7 +8,7 @@ if os.name == 'nt':
         try:
             return msvcrt.getch().decode()
         except:
-            return "null"
+            return None
 else:
     import sys, tty, termios
     fd = sys.stdin.fileno()
@@ -19,12 +19,23 @@ else:
             ch = sys.stdin.read(1)
         finally:
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-        return str(ch)
+        return ch
 
 def wMain():
     wgch = getch()
     try:
         wgch2 = str(wgch)
     except ValueError:
-        wgch2 = "null"
+        wgch2 = None
     return wgch2
+
+def wOriginal():
+    wgch = getch()
+    try:
+        wgch2 = wgch
+    except ValueError:
+        wgch2 = None
+    return wgch2
+
+def wO():
+    return wOriginal()
