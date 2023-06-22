@@ -6,9 +6,11 @@
 
 **PS: 不能省略参数**
 
+TODO: 重构模块
+
 ## 调用: 
 
-wAPICheckLib.wMain (name, file, url, urliswhl)
+wapi.CheckLib.wMain (name, file, url, urliswhl)
 
 参数:
 - name: str, 库名称, (最好)能在 Pypl 上搜索到
@@ -35,7 +37,7 @@ PS:
 
 ps: 此处**假定用户已安装该库**
 ```python
-import wAPICheckLib as wCL
+from wapi import CheckLib as wCL
 test = wCL.wMain("pygame", "./Libs/pygame.whl", "http://localhost/pygame.whl", True)
 print ("Return: "test)
 ```

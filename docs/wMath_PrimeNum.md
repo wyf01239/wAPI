@@ -6,7 +6,7 @@
 
 ## 使用方法: 
 
-wAPIPrimeNum.wMain(num)
+wapi.PrimeNum.wMain(num)
 
 参数类型: int
 
@@ -17,7 +17,7 @@ wAPIPrimeNum.wMain(num)
 ```python
 from encodings import utf_8
 utf_8
-import wAPIPrimeNum as wpn
+from wapi import PrimeNum as wpn
 
 num = int(64)
 if wpn.wMain(num) == True:
