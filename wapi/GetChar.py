@@ -1,7 +1,7 @@
 from encodings import utf_8
 utf_8
 import os
-
+# TODO: 删除不需要功能
 if os.name == 'nt':
     import msvcrt
     def getch():

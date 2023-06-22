@@ -10,6 +10,7 @@ def wMain(name, file, url, urliswhl):
     urliswhl: True / False, 指定下载地址指向的文件是否为 .whl 格式, 如此参数为 False 代表下载地址指向的文件为 .tar.gz 格式
     返回: 已经安装: -1 / 成功: 0 / 失败： 1
     !PS: 从指定 URL 安装, 仅在有 curl.exe 的电脑上可用; 如果不想指定安装文件或下载地址, 请设置为 None.
+    TODO: 将下载方式从 curl.exe 改为 request (全平台可用)
     '''
     wErr = False
     try:
