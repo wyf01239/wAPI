@@ -2,7 +2,7 @@ import os
 from importlib import import_module
 
 
-def wMain(name, file, url, urliswhl):
+def _(name, file, url, urliswhl):
     '''
     name: str, 库名称, (最好)能在 Pypl 上搜索到
     file: str, 本地安装文件 (whl / tar.gz) 地址, 格式: "./xxx/xxx/xxx.tar.gz" or "./xxx/xxx/xxx.whl"

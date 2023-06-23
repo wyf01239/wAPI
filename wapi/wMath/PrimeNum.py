@@ -2,7 +2,7 @@
 
 # Input: int(num) / str(num) -> be a num
 # Back: True / False
-def wMain(num0):
+def _(num0):
     num = int(num0)
     if num > 1:
         for i in range(2,num):
