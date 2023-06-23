@@ -1,30 +1,15 @@
 ﻿from cmath import sqrt
 from encodings import utf_8
 utf_8
-# TODO: 拆分功能
+
 '''
 wAPICircleCalc v2 2023.4.24
 by wyf9 and Dobastickrn.
-r, r_, d, d_, C, C_, S, S_ 的返回值错误时为 None.
+出现错误时会被抛出, 注意处理错误 (除原版)
+PAI 如不指定, 默认值为 3.14
 '''
 
-def r(r):
-    '''
-    圆的半径求其他 (假定 PAI 为 3.14)
-    r: 半径 (int / float)
-    返回: tuple (直径, 周长, 面积)
-    '''
-    try:
-        d = 2*float(r)
-        C = float(d)*3.14
-        S = float(r)**2*3.14
-        wBack = (d, C, S)
-        return wBack
-    except:
-        wBack = None
-        return wBack
-    
-def r_(r, pai):
+def r(r, pai = 3.14):
     '''
     圆的半径求其他 (自定义 PAI)
     r: 半径 (int / float)
@@ -38,26 +23,9 @@ def r_(r, pai):
         wBack = (d, C, S)
         return wBack
     except:
-        wBack = None
-        return wBack
+        raise
 
-def d(d):
-    '''
-    圆的直径求其他 (假定 PAI 为 3.14)
-    d: 直径 (int / float)
-    返回: tuple (半径, 周长, 面积)
-    '''
-    try:
-        r = float(d)/2
-        C = float(d)*3.14
-        S = float(d)**2*3.14
-        wBack = (r, C, S)
-        return wBack
-    except:
-        wBack = None
-        return wBack
-
-def d_(d, pai):
+def d(d, pai = 3.14):
     '''
     圆的直径求其他 (自定 PAI)
     r: 半径 (int / float)
@@ -71,32 +39,16 @@ def d_(d, pai):
         wBack = (r, C, S)
         return wBack
     except:
-        wBack = None
-        return wBack
+        raise
 
-def C(C):
-    '''
-    圆的周长求其他 (假定 PAI 为 3.14)
-    C: 直径 (int / float)
-    返回: tuple (半径, 直径, 面积)
-    '''
-    try:
-        r = float(C) / 3.14 / 2
-        d = float(C) / 3.14
-        S = float(r) ** 2 * 3.14
-        wBack = (r, d, S)
-        return wBack
-    except:
-        wBack = None
-        return wBack
-    
-def C_(C, pai):
+def C(C, pai = 3.14):
     '''
     圆的周长求其他 (自定 PAI)
     C: 周长 (int / float)
     pai: 自定的 PAI (int / float)
     返回: tuple (半径, 直径, 面积)
     '''
+    assert pai != 0 , "pai Can't be 0"
     try:
         r = float(C) / float(pai) / 2
         d = float(C) / float(pai)
@@ -104,34 +56,16 @@ def C_(C, pai):
         wBack = (r, d, S)
         return wBack
     except:
-        wBack = None
-        return wBack
+        raise
 
-
-def S(S):
-    '''
-    圆的面积求其他 (假定 PAI 为 3.14)
-    S: 面积 (int / float)
-    返回: tuple (半径, 直径, 周长)
-    '''
-    try:
-        r = sqrt(float(S) / 3.14)
-        d = float(r) * 2
-        C = float(d) * 3.14
-        wBack = (r, d, C)
-        return wBack
-    except:
-        wBack = None
-        return wBack
-
-
-def S_(S, pai):
+def S(S, pai = 3.14):
     '''
     圆的面积求其他 (自定 PAI)
     S: 面积 (int / float)
     pai: 自定的 PAI (int / float)
     返回: tuple (半径, 直径, 周长)
     '''
+    assert pai != 0, "pai Can't be 0"
     try:
         r = sqrt(float(S) / pai)
         d = float(r) * 2
@@ -139,8 +73,7 @@ def S_(S, pai):
         wBack = (r, d, C)
         return wBack
     except:
-        wBack = None
-        return wBack
+        raise
 
 def Original():
     print('Circle Calculator\n©Dobastickrn    Date:2023/4/6\n注意: 本工具中π的取值为3.14\n')
