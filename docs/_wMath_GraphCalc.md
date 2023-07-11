@@ -22,13 +22,13 @@
 ```python
 wapi/wMath/GraphCalc/
     2/ # 二维图形
-        Circle
+        Circle.py # 2.Circle()
     3/ # 三维
 ```
 
 # 使用
 
-## CircleCalc
+## Circle
 
 TODO: 重构图形计算器, 支持平面和立体图形计算
 
